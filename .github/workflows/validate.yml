@@ -1,0 +1,51 @@
+name: Validate Skills
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "skills/**"
+
+jobs:
+  validate:
+    name: Validate changed skills
+    runs-on: ubuntu-latest
+    # Only run for PRs submitted by the ProfessorGPT platform
+    if: github.actor == 'professor-gpt'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Find which skill directories changed in this PR.
+      # Skills use a 2-level namespaced structure: skills/<username>/<slug>/
+      # We extract "username/slug" (fields 2 and 3) so the validator receives
+      # the full namespaced path, e.g. "semihozbir/adaptive-language-tutor".
+      - name: Find changed skill directories
+        id: changed
+        run: |
+          SLUGS=$(git diff --name-only origin/${{ github.base_ref }}...HEAD \
+            | grep '^skills/' \
+            | awk -F'/' 'NF>=4{print $2"/"$3}' \
+            | sort -u \
+            | tr '\n' ' ' \
+            | sed 's/[[:space:]]*$//')
+          echo "slugs=$SLUGS" >> "$GITHUB_OUTPUT"
+          if [ -n "$SLUGS" ]; then
+            echo "Changed skills: $SLUGS"
+          else
+            echo "No skill directories changed."
+          fi
+
+      - name: Validate
+        if: steps.changed.outputs.slugs != ''
+        run: node .github/scripts/validate-skills.js ${{ steps.changed.outputs.slugs }}
+
+      - name: No skills to validate
+        if: steps.changed.outputs.slugs == ''
+        run: echo "No skill directories changed — nothing to validate."
