@@ -1,7 +1,33 @@
 {
   "version": "1",
-  "updatedAt": "2026-06-30T12:54:15.587Z",
+  "updatedAt": "2026-06-30T14:59:10.815Z",
   "skills": [
+    {
+      "name": "silentuser/corporate-assistant-3",
+      "title": "Corporate Assistant-3",
+      "description": "Use this skill for meeting briefs, decision memos, sales proposals, and priority planning within corporate settings.",
+      "version": "1.0.0",
+      "author": "silentuser",
+      "tags": [
+        "executive-assistant",
+        "sales-specialist",
+        "meeting-briefs",
+        "decision-memos",
+        "crm-management"
+      ],
+      "category": "productivity",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/corporate-assistant-3/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/corporate-assistant-3/metadata.json",
+      "files": [
+        "SKILL.md",
+        "examples/executive-summary-example.md",
+        "examples/sales-proposal-example.md",
+        "metadata.json",
+        "references/crm-guidelines.md"
+      ]
+    },
     {
       "name": "professor-gpt/code-reviewer",
       "title": "Code Reviewer",
@@ -22,12 +48,12 @@
       "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/code-reviewer/SKILL.md",
       "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/code-reviewer/metadata.json",
       "files": [
+        "SKILL.md",
         "checklists/performance.md",
         "checklists/security.md",
         "examples/review-output.md",
         "metadata.json",
-        "scripts/summarize-review.py",
-        "SKILL.md"
+        "scripts/summarize-review.py"
       ]
     },
     {
@@ -50,11 +76,11 @@
       "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/sql-expert/SKILL.md",
       "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/sql-expert/metadata.json",
       "files": [
+        "SKILL.md",
         "checklists/query-optimization.md",
         "examples/cte-and-window-functions.sql",
         "metadata.json",
-        "scripts/explain-analyzer.sql",
-        "SKILL.md"
+        "scripts/explain-analyzer.sql"
       ]
     },
     {
@@ -77,12 +103,12 @@
       "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/technical-writer/SKILL.md",
       "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/technical-writer/metadata.json",
       "files": [
+        "SKILL.md",
         "checklists/doc-review.md",
         "examples/before-after.md",
         "metadata.json",
-        "SKILL.md",
-        "templates/api-reference.md",
-        "templates/README-template.md"
+        "templates/README-template.md",
+        "templates/api-reference.md"
       ]
     },
     {
@@ -105,10 +131,10 @@
       "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/system-architect/SKILL.md",
       "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/system-architect/metadata.json",
       "files": [
+        "SKILL.md",
         "checklists/scalability.md",
         "examples/mermaid-diagrams.md",
         "metadata.json",
-        "SKILL.md",
         "templates/architecture-decision-record.md"
       ]
     },
@@ -133,11 +159,11 @@
       "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/security-auditor/SKILL.md",
       "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/security-auditor/metadata.json",
       "files": [
+        "SKILL.md",
         "checklists/owasp-top10.md",
         "examples/vulnerability-report.md",
         "metadata.json",
-        "scripts/audit.sh",
-        "SKILL.md"
+        "scripts/audit.sh"
       ]
     },
     {
@@ -161,9 +187,9 @@
       "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/product-manager/SKILL.md",
       "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/product-manager/metadata.json",
       "files": [
+        "SKILL.md",
         "examples/rice-scoring-example.md",
         "metadata.json",
-        "SKILL.md",
         "templates/prd-template.md"
       ]
     },
@@ -188,9 +214,9 @@
       "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/api-designer/SKILL.md",
       "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/api-designer/metadata.json",
       "files": [
+        "SKILL.md",
         "checklists/api-review.md",
         "metadata.json",
-        "SKILL.md",
         "templates/openapi-starter.yaml"
       ]
     },
@@ -214,11 +240,11 @@
       "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/debug-detective/SKILL.md",
       "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/debug-detective/metadata.json",
       "files": [
+        "SKILL.md",
         "checklists/debug-checklist.md",
         "examples/stack-trace-analysis.md",
         "metadata.json",
-        "scripts/memory-profile.sh",
-        "SKILL.md"
+        "scripts/memory-profile.sh"
       ]
     },
     {
@@ -242,11 +268,11 @@
       "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/data-analyst/SKILL.md",
       "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/data-analyst/metadata.json",
       "files": [
+        "SKILL.md",
         "checklists/data-quality.md",
         "metadata.json",
         "scripts/ab_test.py",
-        "scripts/eda.py",
-        "SKILL.md"
+        "scripts/eda.py"
       ]
     },
     {
@@ -270,10 +296,10 @@
       "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/prompt-engineer/SKILL.md",
       "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/prompt-engineer/metadata.json",
       "files": [
+        "SKILL.md",
         "checklists/prompt-review.md",
         "examples/before-after.md",
         "metadata.json",
-        "SKILL.md",
         "templates/system-prompt-template.md"
       ]
     }
