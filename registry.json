@@ -1,30 +1,7 @@
 {
   "version": "1",
-  "updatedAt": "2026-06-30T16:57:39.837Z",
+  "updatedAt": "2026-06-30T16:59:15.808Z",
   "skills": [
-    {
-      "name": "silentuser/sql-query-optimizer",
-      "title": "SQL Query Optimizer",
-      "description": "Use this skill when you need to rewrite slow SQL queries, suggest indexes, and explain execution plans in plain language.",
-      "version": "1.0.0",
-      "author": "silentuser",
-      "tags": [
-        "sql",
-        "performance",
-        "optimization",
-        "database",
-        "indexing"
-      ],
-      "category": "coding",
-      "agents": [],
-      "license": "MIT",
-      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/sql-query-optimizer/SKILL.md",
-      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/sql-query-optimizer/metadata.json",
-      "files": [
-        "SKILL.md",
-        "metadata.json"
-      ]
-    },
     {
       "name": "professor-gpt/code-reviewer",
       "title": "Code Reviewer",
