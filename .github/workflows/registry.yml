@@ -13,12 +13,15 @@ jobs:
     # Skip commits made by this workflow itself (avoids infinite loop)
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     permissions:
-      contents: write   # Works because GitHub Actions is in the Ruleset bypass list —
-                        # no REGISTRY_PAT secret needed.
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
-        # GITHUB_TOKEN default — bypass via Ruleset grants push access to main
+        with:
+          # PAT from repo owner (professor-gpt) bypasses Ruleset "require PR" rule.
+          # Add REGISTRY_PAT secret: Settings → Secrets → Actions → New repository secret
+          # Value: same PAT used for GITHUB_TOKEN in .env (needs repo + workflow scopes)
+          token: ${{ secrets.REGISTRY_PAT }}
 
       - uses: actions/setup-node@v4
         with:
