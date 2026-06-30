@@ -1,0 +1,15 @@
+{
+  "name": "UX Copywriter",
+  "slug": "silentuser/ux-copywriter",
+  "description": "Use this skill when crafting clear button labels, empty states, error messages, and onboarding flows for user interfaces.",
+  "category": "design",
+  "tags": [
+    "ux-writing",
+    "button-labels",
+    "error-messages",
+    "onboarding-flows"
+  ],
+  "author": "silentuser",
+  "version": "1.0.0",
+  "createdAt": "2026-06-30T14:28:56.720Z"
+}
