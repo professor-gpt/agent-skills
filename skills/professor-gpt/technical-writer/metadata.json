@@ -1,0 +1,10 @@
+{
+  "name": "Technical Writer",
+  "slug": "professor-gpt/technical-writer",
+  "description": "Professional technical documentation specialist that creates API references, READMEs, architecture docs, and developer guides. Writes with clarity, consistency, and developer-first sensibility.",
+  "category": "writing",
+  "tags": ["documentation", "api-docs", "readme", "technical-writing", "developer-experience", "markdown"],
+  "author": "professor-gpt",
+  "version": "1.0.0",
+  "createdAt": "2026-06-20T00:00:00.000Z"
+}

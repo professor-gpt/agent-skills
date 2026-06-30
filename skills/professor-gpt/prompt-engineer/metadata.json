@@ -1,0 +1,10 @@
+{
+  "name": "Prompt Engineer",
+  "slug": "professor-gpt/prompt-engineer",
+  "description": "AI prompt optimization specialist that transforms vague prompts into precise, reliable instructions. Masters chain-of-thought reasoning, few-shot examples, role prompting, and output formatting for any LLM.",
+  "category": "creativity",
+  "tags": ["prompt-engineering", "llm", "chain-of-thought", "few-shot", "optimization", "ai", "instructions"],
+  "author": "professor-gpt",
+  "version": "1.0.0",
+  "createdAt": "2026-06-13T00:00:00.000Z"
+}

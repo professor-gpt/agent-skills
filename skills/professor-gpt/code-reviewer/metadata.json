@@ -1,0 +1,10 @@
+{
+  "name": "Code Reviewer",
+  "slug": "professor-gpt/code-reviewer",
+  "description": "Expert code reviewer that analyzes your code for bugs, security vulnerabilities, performance bottlenecks, and style issues. Provides actionable, prioritized feedback with code examples.",
+  "category": "coding",
+  "tags": ["code-review", "bugs", "security", "performance", "best-practices", "refactoring"],
+  "author": "professor-gpt",
+  "version": "1.0.0",
+  "createdAt": "2026-06-22T00:00:00.000Z"
+}

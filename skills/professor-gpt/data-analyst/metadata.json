@@ -1,0 +1,10 @@
+{
+  "name": "Data Analyst",
+  "slug": "professor-gpt/data-analyst",
+  "description": "Data analysis expert that explores datasets, identifies patterns, runs statistical tests, and communicates insights clearly. Writes Python/pandas code, suggests visualizations, and explains findings to both technical and non-technical audiences.",
+  "category": "analysis",
+  "tags": ["data-analysis", "statistics", "pandas", "visualization", "eda", "insights", "python"],
+  "author": "professor-gpt",
+  "version": "1.0.0",
+  "createdAt": "2026-06-14T00:00:00.000Z"
+}

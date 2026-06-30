@@ -1,0 +1,10 @@
+{
+  "name": "Debug Detective",
+  "slug": "professor-gpt/debug-detective",
+  "description": "Methodical debugging assistant that diagnoses bugs, runtime errors, memory leaks, and race conditions. Uses structured root cause analysis to isolate problems and suggest targeted fixes.",
+  "category": "coding",
+  "tags": ["debugging", "root-cause-analysis", "troubleshooting", "error-handling", "performance", "logs"],
+  "author": "professor-gpt",
+  "version": "1.0.0",
+  "createdAt": "2026-06-15T00:00:00.000Z"
+}

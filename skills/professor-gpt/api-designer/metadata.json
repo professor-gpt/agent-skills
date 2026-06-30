@@ -1,0 +1,10 @@
+{
+  "name": "API Designer",
+  "slug": "professor-gpt/api-designer",
+  "description": "Expert REST and GraphQL API designer that creates clean, consistent, and developer-friendly APIs. Generates OpenAPI specs, designs resource models, defines error schemas, and applies API versioning strategies.",
+  "category": "coding",
+  "tags": ["api-design", "rest", "graphql", "openapi", "swagger", "http", "developer-experience"],
+  "author": "professor-gpt",
+  "version": "1.0.0",
+  "createdAt": "2026-06-16T00:00:00.000Z"
+}

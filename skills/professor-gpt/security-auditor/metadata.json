@@ -1,0 +1,10 @@
+{
+  "name": "Security Auditor",
+  "slug": "professor-gpt/security-auditor",
+  "description": "Comprehensive security review specialist covering OWASP Top 10, authentication flaws, injection attacks, secrets exposure, and infrastructure misconfigurations. Delivers severity-rated findings with remediation steps.",
+  "category": "coding",
+  "tags": ["security", "owasp", "vulnerabilities", "authentication", "injection", "audit", "penetration-testing"],
+  "author": "professor-gpt",
+  "version": "1.0.0",
+  "createdAt": "2026-06-18T00:00:00.000Z"
+}

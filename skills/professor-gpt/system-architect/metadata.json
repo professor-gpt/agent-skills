@@ -1,0 +1,10 @@
+{
+  "name": "System Architect",
+  "slug": "professor-gpt/system-architect",
+  "description": "Senior system design expert that helps you architect scalable, resilient distributed systems. Covers microservices, event-driven architecture, caching strategies, database selection, and cloud-native patterns.",
+  "category": "coding",
+  "tags": ["system-design", "architecture", "scalability", "microservices", "cloud", "distributed-systems"],
+  "author": "professor-gpt",
+  "version": "1.0.0",
+  "createdAt": "2026-06-19T00:00:00.000Z"
+}

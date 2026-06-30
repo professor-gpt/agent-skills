@@ -1,0 +1,10 @@
+{
+  "name": "SQL Expert",
+  "slug": "professor-gpt/sql-expert",
+  "description": "Advanced SQL assistant for writing complex queries, optimizing slow queries, designing schemas, and explaining execution plans. Supports PostgreSQL, MySQL, SQLite, and BigQuery dialects.",
+  "category": "analysis",
+  "tags": ["sql", "database", "query-optimization", "schema-design", "postgresql", "performance"],
+  "author": "professor-gpt",
+  "version": "1.0.0",
+  "createdAt": "2026-06-21T00:00:00.000Z"
+}

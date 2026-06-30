@@ -1,0 +1,632 @@
+openapi: 3.1.0
+
+info:
+  title: "[Your API Name]"
+  version: "1.0.0"
+  description: |
+    ## Overview
+    [2–3 sentences describing what this API does and who uses it.]
+
+    ## Authentication
+    All endpoints require a Bearer token in the `Authorization` header:
+    ```
+    Authorization: Bearer <your-api-key>
+    ```
+    Obtain a token via `POST /v1/auth/token`.
+
+    ## Rate Limits
+    - **Free plan**: 60 requests/minute
+    - **Pro plan**: 600 requests/minute
+
+    Rate limit headers are included in all responses:
+    - `X-RateLimit-Limit`
+    - `X-RateLimit-Remaining`
+    - `X-RateLimit-Reset` (Unix timestamp)
+
+    ## Versioning
+    The API is versioned via URL prefix (`/v1/`). Breaking changes increment the major version.
+    We maintain the previous major version for 12 months after a new version is released.
+
+  contact:
+    name: API Support
+    email: api@example.com
+    url: https://example.com/support
+
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+servers:
+  - url: https://api.example.com/v1
+    description: Production
+  - url: https://api-staging.example.com/v1
+    description: Staging (use for testing)
+  - url: http://localhost:3000/v1
+    description: Local development
+
+security:
+  - BearerAuth: []
+
+tags:
+  - name: Auth
+    description: Authentication and token management
+  - name: Users
+    description: User profile and account management
+  - name: Resources
+    description: Core resource CRUD operations
+  - name: Webhooks
+    description: Webhook configuration and delivery
+
+# =============================================================================
+# PATHS
+# =============================================================================
+paths:
+
+  # ── Auth ───────────────────────────────────────────────────────────────────
+
+  /auth/token:
+    post:
+      tags: [Auth]
+      summary: Create access token
+      operationId: createToken
+      security: []        # No auth required for token creation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRequest'
+            example:
+              email: user@example.com
+              password: "correct-horse-battery-staple"
+      responses:
+        "200":
+          description: Token created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "422":
+          $ref: '#/components/responses/ValidationFailed'
+
+  /auth/token/refresh:
+    post:
+      tags: [Auth]
+      summary: Refresh access token
+      operationId: refreshToken
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [refresh_token]
+              properties:
+                refresh_token:
+                  type: string
+                  description: Refresh token from previous token creation
+      responses:
+        "200":
+          description: New access token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+
+  # ── Users ──────────────────────────────────────────────────────────────────
+
+  /me:
+    get:
+      tags: [Users]
+      summary: Get current user
+      operationId: getCurrentUser
+      description: Returns the profile of the authenticated user.
+      responses:
+        "200":
+          description: User profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+
+    patch:
+      tags: [Users]
+      summary: Update current user
+      operationId: updateCurrentUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserRequest'
+      responses:
+        "200":
+          description: Updated user profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        "400":
+          $ref: '#/components/responses/BadRequest'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "422":
+          $ref: '#/components/responses/ValidationFailed'
+
+  # ── Resources ──────────────────────────────────────────────────────────────
+
+  /resources:
+    get:
+      tags: [Resources]
+      summary: List resources
+      operationId: listResources
+      description: Returns a paginated list of resources for the authenticated user.
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/PerPage'
+        - name: status
+          in: query
+          description: Filter by status
+          schema:
+            type: string
+            enum: [active, archived, pending]
+        - name: sort
+          in: query
+          description: Sort field
+          schema:
+            type: string
+            enum: [created_at, updated_at, name]
+            default: created_at
+        - name: order
+          in: query
+          description: Sort direction
+          schema:
+            type: string
+            enum: [asc, desc]
+            default: desc
+      responses:
+        "200":
+          description: Paginated list of resources
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceListResponse'
+
+    post:
+      tags: [Resources]
+      summary: Create resource
+      operationId: createResource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateResourceRequest'
+            example:
+              name: "My First Resource"
+              description: "Optional description"
+      responses:
+        "201":
+          description: Resource created
+          headers:
+            Location:
+              description: URL of the created resource
+              schema:
+                type: string
+                example: /v1/resources/res_abc123
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceResponse'
+        "400":
+          $ref: '#/components/responses/BadRequest'
+        "409":
+          $ref: '#/components/responses/Conflict'
+        "422":
+          $ref: '#/components/responses/ValidationFailed'
+
+  /resources/{id}:
+    parameters:
+      - $ref: '#/components/parameters/ResourceId'
+
+    get:
+      tags: [Resources]
+      summary: Get resource
+      operationId: getResource
+      responses:
+        "200":
+          description: Resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceResponse'
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+    patch:
+      tags: [Resources]
+      summary: Update resource
+      operationId: updateResource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateResourceRequest'
+      responses:
+        "200":
+          description: Updated resource
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceResponse'
+        "404":
+          $ref: '#/components/responses/NotFound'
+        "422":
+          $ref: '#/components/responses/ValidationFailed'
+
+    delete:
+      tags: [Resources]
+      summary: Delete resource
+      operationId: deleteResource
+      responses:
+        "204":
+          description: Resource deleted
+        "404":
+          $ref: '#/components/responses/NotFound'
+
+# =============================================================================
+# COMPONENTS
+# =============================================================================
+components:
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token obtained via POST /v1/auth/token
+
+  # ── Parameters ─────────────────────────────────────────────────────────────
+
+  parameters:
+    Page:
+      name: page
+      in: query
+      description: Page number (1-indexed)
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+
+    PerPage:
+      name: per_page
+      in: query
+      description: Number of items per page
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: Resource identifier
+      schema:
+        type: string
+        example: res_01hx4j9kt2g9abcdef
+
+  # ── Request Schemas ─────────────────────────────────────────────────────────
+
+  schemas:
+
+    TokenRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+          example: user@example.com
+        password:
+          type: string
+          format: password
+          minLength: 8
+
+    TokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+          description: JWT access token (expires in 1 hour)
+        refresh_token:
+          type: string
+          description: Refresh token (expires in 30 days)
+        expires_in:
+          type: integer
+          description: Seconds until access token expires
+          example: 3600
+        token_type:
+          type: string
+          enum: [Bearer]
+
+    UpdateUserRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: "Alice Smith"
+        notification_email:
+          type: string
+          format: email
+
+    CreateResourceRequest:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+          example: "My Resource"
+        description:
+          type: string
+          maxLength: 1000
+        config:
+          type: object
+          additionalProperties: true
+          description: Resource-specific configuration
+
+    UpdateResourceRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 255
+        description:
+          type: string
+          maxLength: 1000
+        status:
+          type: string
+          enum: [active, archived]
+
+  # ── Response Schemas ────────────────────────────────────────────────────────
+
+    User:
+      type: object
+      required: [id, email, plan, created_at, updated_at]
+      properties:
+        id:
+          type: string
+          description: User ID (prefix `usr_`)
+          example: usr_01hx4j9kt2g9abcdef
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+          nullable: true
+        plan:
+          type: string
+          enum: [free, pro, enterprise]
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    UserResponse:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/User'
+
+    Resource:
+      type: object
+      required: [id, name, status, created_at, updated_at]
+      properties:
+        id:
+          type: string
+          example: res_01hx4j9kt2g9abcdef
+        name:
+          type: string
+          example: "My Resource"
+        description:
+          type: string
+          nullable: true
+        status:
+          type: string
+          enum: [pending, active, archived]
+        config:
+          type: object
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+
+    ResourceResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Resource'
+
+    ResourceListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        meta:
+          $ref: '#/components/schemas/PaginationMeta'
+        links:
+          $ref: '#/components/schemas/PaginationLinks'
+
+    PaginationMeta:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 47
+        page:
+          type: integer
+          example: 1
+        per_page:
+          type: integer
+          example: 20
+        pages:
+          type: integer
+          example: 3
+
+    PaginationLinks:
+      type: object
+      properties:
+        self:
+          type: string
+          example: /v1/resources?page=1
+        next:
+          type: string
+          nullable: true
+          example: /v1/resources?page=2
+        prev:
+          type: string
+          nullable: true
+          example: null
+        last:
+          type: string
+          example: /v1/resources?page=3
+
+    ErrorDetail:
+      type: object
+      required: [field, code, message]
+      properties:
+        field:
+          type: string
+          example: email
+        code:
+          type: string
+          example: INVALID_FORMAT
+        message:
+          type: string
+          example: Must be a valid email address
+
+    ErrorResponse:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code:
+              type: string
+              example: VALIDATION_FAILED
+            message:
+              type: string
+              example: Request validation failed
+            details:
+              type: array
+              items:
+                $ref: '#/components/schemas/ErrorDetail'
+            request_id:
+              type: string
+              example: req_abc123
+            docs_url:
+              type: string
+              example: https://docs.example.com/errors/VALIDATION_FAILED
+
+  # ── Reusable Responses ──────────────────────────────────────────────────────
+
+  responses:
+    BadRequest:
+      description: Bad request — malformed JSON or invalid parameter type
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+
+    Unauthorized:
+      description: Missing or invalid authentication token
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: UNAUTHORIZED
+              message: Missing or invalid authentication token
+              request_id: req_abc123
+
+    Forbidden:
+      description: Authenticated but not authorized to perform this action
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+
+    NotFound:
+      description: Resource not found or not accessible to this user
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: NOT_FOUND
+              message: Resource not found
+              request_id: req_abc123
+
+    Conflict:
+      description: Resource already exists or state conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+
+    ValidationFailed:
+      description: Request body validation failed — field-level errors
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: VALIDATION_FAILED
+              message: Request validation failed
+              details:
+                - field: name
+                  code: REQUIRED
+                  message: name is required
+                - field: email
+                  code: INVALID_FORMAT
+                  message: Must be a valid email address
+              request_id: req_abc123
+
+    TooManyRequests:
+      description: Rate limit exceeded
+      headers:
+        Retry-After:
+          description: Seconds until rate limit resets
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

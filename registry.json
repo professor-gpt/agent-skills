@@ -1,0 +1,281 @@
+{
+  "version": "1",
+  "updatedAt": "2026-06-30T12:54:15.587Z",
+  "skills": [
+    {
+      "name": "professor-gpt/code-reviewer",
+      "title": "Code Reviewer",
+      "description": "Expert code reviewer that analyzes your code for bugs, security vulnerabilities, performance bottlenecks, and style issues. Provides actionable, prioritized feedback with code examples.",
+      "version": "1.0.0",
+      "author": "professor-gpt",
+      "tags": [
+        "code-review",
+        "bugs",
+        "security",
+        "performance",
+        "best-practices",
+        "refactoring"
+      ],
+      "category": "coding",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/code-reviewer/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/code-reviewer/metadata.json",
+      "files": [
+        "checklists/performance.md",
+        "checklists/security.md",
+        "examples/review-output.md",
+        "metadata.json",
+        "scripts/summarize-review.py",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "professor-gpt/sql-expert",
+      "title": "SQL Expert",
+      "description": "Advanced SQL assistant for writing complex queries, optimizing slow queries, designing schemas, and explaining execution plans. Supports PostgreSQL, MySQL, SQLite, and BigQuery dialects.",
+      "version": "1.0.0",
+      "author": "professor-gpt",
+      "tags": [
+        "sql",
+        "database",
+        "query-optimization",
+        "schema-design",
+        "postgresql",
+        "performance"
+      ],
+      "category": "analysis",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/sql-expert/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/sql-expert/metadata.json",
+      "files": [
+        "checklists/query-optimization.md",
+        "examples/cte-and-window-functions.sql",
+        "metadata.json",
+        "scripts/explain-analyzer.sql",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "professor-gpt/technical-writer",
+      "title": "Technical Writer",
+      "description": "Professional technical documentation specialist that creates API references, READMEs, architecture docs, and developer guides. Writes with clarity, consistency, and developer-first sensibility.",
+      "version": "1.0.0",
+      "author": "professor-gpt",
+      "tags": [
+        "documentation",
+        "api-docs",
+        "readme",
+        "technical-writing",
+        "developer-experience",
+        "markdown"
+      ],
+      "category": "writing",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/technical-writer/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/technical-writer/metadata.json",
+      "files": [
+        "checklists/doc-review.md",
+        "examples/before-after.md",
+        "metadata.json",
+        "SKILL.md",
+        "templates/api-reference.md",
+        "templates/README-template.md"
+      ]
+    },
+    {
+      "name": "professor-gpt/system-architect",
+      "title": "System Architect",
+      "description": "Senior system design expert that helps you architect scalable, resilient distributed systems. Covers microservices, event-driven architecture, caching strategies, database selection, and cloud-native patterns.",
+      "version": "1.0.0",
+      "author": "professor-gpt",
+      "tags": [
+        "system-design",
+        "architecture",
+        "scalability",
+        "microservices",
+        "cloud",
+        "distributed-systems"
+      ],
+      "category": "coding",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/system-architect/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/system-architect/metadata.json",
+      "files": [
+        "checklists/scalability.md",
+        "examples/mermaid-diagrams.md",
+        "metadata.json",
+        "SKILL.md",
+        "templates/architecture-decision-record.md"
+      ]
+    },
+    {
+      "name": "professor-gpt/security-auditor",
+      "title": "Security Auditor",
+      "description": "Comprehensive security review specialist covering OWASP Top 10, authentication flaws, injection attacks, secrets exposure, and infrastructure misconfigurations. Delivers severity-rated findings with remediation steps.",
+      "version": "1.0.0",
+      "author": "professor-gpt",
+      "tags": [
+        "security",
+        "owasp",
+        "vulnerabilities",
+        "authentication",
+        "injection",
+        "audit",
+        "penetration-testing"
+      ],
+      "category": "coding",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/security-auditor/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/security-auditor/metadata.json",
+      "files": [
+        "checklists/owasp-top10.md",
+        "examples/vulnerability-report.md",
+        "metadata.json",
+        "scripts/audit.sh",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "professor-gpt/product-manager",
+      "title": "Product Manager",
+      "description": "Strategic product management partner that helps craft PRDs, user stories, roadmaps, and feature specs. Applies Jobs-to-be-Done, RICE prioritization, and outcome-driven product thinking.",
+      "version": "1.0.0",
+      "author": "professor-gpt",
+      "tags": [
+        "product-management",
+        "prd",
+        "user-stories",
+        "roadmap",
+        "agile",
+        "prioritization",
+        "strategy"
+      ],
+      "category": "productivity",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/product-manager/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/product-manager/metadata.json",
+      "files": [
+        "examples/rice-scoring-example.md",
+        "metadata.json",
+        "SKILL.md",
+        "templates/prd-template.md"
+      ]
+    },
+    {
+      "name": "professor-gpt/api-designer",
+      "title": "API Designer",
+      "description": "Expert REST and GraphQL API designer that creates clean, consistent, and developer-friendly APIs. Generates OpenAPI specs, designs resource models, defines error schemas, and applies API versioning strategies.",
+      "version": "1.0.0",
+      "author": "professor-gpt",
+      "tags": [
+        "api-design",
+        "rest",
+        "graphql",
+        "openapi",
+        "swagger",
+        "http",
+        "developer-experience"
+      ],
+      "category": "coding",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/api-designer/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/api-designer/metadata.json",
+      "files": [
+        "checklists/api-review.md",
+        "metadata.json",
+        "SKILL.md",
+        "templates/openapi-starter.yaml"
+      ]
+    },
+    {
+      "name": "professor-gpt/debug-detective",
+      "title": "Debug Detective",
+      "description": "Methodical debugging assistant that diagnoses bugs, runtime errors, memory leaks, and race conditions. Uses structured root cause analysis to isolate problems and suggest targeted fixes.",
+      "version": "1.0.0",
+      "author": "professor-gpt",
+      "tags": [
+        "debugging",
+        "root-cause-analysis",
+        "troubleshooting",
+        "error-handling",
+        "performance",
+        "logs"
+      ],
+      "category": "coding",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/debug-detective/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/debug-detective/metadata.json",
+      "files": [
+        "checklists/debug-checklist.md",
+        "examples/stack-trace-analysis.md",
+        "metadata.json",
+        "scripts/memory-profile.sh",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "professor-gpt/data-analyst",
+      "title": "Data Analyst",
+      "description": "Data analysis expert that explores datasets, identifies patterns, runs statistical tests, and communicates insights clearly. Writes Python/pandas code, suggests visualizations, and explains findings to both technical and non-technical audiences.",
+      "version": "1.0.0",
+      "author": "professor-gpt",
+      "tags": [
+        "data-analysis",
+        "statistics",
+        "pandas",
+        "visualization",
+        "eda",
+        "insights",
+        "python"
+      ],
+      "category": "analysis",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/data-analyst/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/data-analyst/metadata.json",
+      "files": [
+        "checklists/data-quality.md",
+        "metadata.json",
+        "scripts/ab_test.py",
+        "scripts/eda.py",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "professor-gpt/prompt-engineer",
+      "title": "Prompt Engineer",
+      "description": "AI prompt optimization specialist that transforms vague prompts into precise, reliable instructions. Masters chain-of-thought reasoning, few-shot examples, role prompting, and output formatting for any LLM.",
+      "version": "1.0.0",
+      "author": "professor-gpt",
+      "tags": [
+        "prompt-engineering",
+        "llm",
+        "chain-of-thought",
+        "few-shot",
+        "optimization",
+        "ai",
+        "instructions"
+      ],
+      "category": "creativity",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/prompt-engineer/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/professor-gpt/prompt-engineer/metadata.json",
+      "files": [
+        "checklists/prompt-review.md",
+        "examples/before-after.md",
+        "metadata.json",
+        "SKILL.md",
+        "templates/system-prompt-template.md"
+      ]
+    }
+  ]
+}

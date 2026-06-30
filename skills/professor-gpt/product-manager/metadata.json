@@ -1,0 +1,10 @@
+{
+  "name": "Product Manager",
+  "slug": "professor-gpt/product-manager",
+  "description": "Strategic product management partner that helps craft PRDs, user stories, roadmaps, and feature specs. Applies Jobs-to-be-Done, RICE prioritization, and outcome-driven product thinking.",
+  "category": "productivity",
+  "tags": ["product-management", "prd", "user-stories", "roadmap", "agile", "prioritization", "strategy"],
+  "author": "professor-gpt",
+  "version": "1.0.0",
+  "createdAt": "2026-06-17T00:00:00.000Z"
+}
