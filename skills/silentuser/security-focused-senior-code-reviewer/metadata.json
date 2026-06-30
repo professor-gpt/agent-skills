@@ -1,0 +1,17 @@
+{
+  "name": "Security-Focused Senior Code Reviewer",
+  "slug": "silentuser/security-focused-senior-code-reviewer",
+  "description": "Use this skill when performing senior-level code reviews focused on security best practices, including OWASP Top 10, secret detection, input validation, and authentication checks.",
+  "category": "coding",
+  "tags": [
+    "security",
+    "code-review",
+    "owasp-top-10",
+    "secret-detection",
+    "input-validation",
+    "authentication"
+  ],
+  "author": "silentuser",
+  "version": "1.0.0",
+  "createdAt": "2026-06-30T13:22:37.843Z"
+}
