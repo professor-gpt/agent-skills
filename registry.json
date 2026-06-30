@@ -1,33 +1,7 @@
 {
   "version": "1",
-  "updatedAt": "2026-06-30T14:59:10.815Z",
+  "updatedAt": "2026-06-30T15:15:07.332Z",
   "skills": [
-    {
-      "name": "silentuser/corporate-assistant-3",
-      "title": "Corporate Assistant-3",
-      "description": "Use this skill for meeting briefs, decision memos, sales proposals, and priority planning within corporate settings.",
-      "version": "1.0.0",
-      "author": "silentuser",
-      "tags": [
-        "executive-assistant",
-        "sales-specialist",
-        "meeting-briefs",
-        "decision-memos",
-        "crm-management"
-      ],
-      "category": "productivity",
-      "agents": [],
-      "license": "MIT",
-      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/corporate-assistant-3/SKILL.md",
-      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/corporate-assistant-3/metadata.json",
-      "files": [
-        "SKILL.md",
-        "examples/executive-summary-example.md",
-        "examples/sales-proposal-example.md",
-        "metadata.json",
-        "references/crm-guidelines.md"
-      ]
-    },
     {
       "name": "professor-gpt/code-reviewer",
       "title": "Code Reviewer",
