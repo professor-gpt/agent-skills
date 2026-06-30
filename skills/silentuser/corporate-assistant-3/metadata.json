@@ -1,0 +1,16 @@
+{
+  "name": "Corporate Assistant-3",
+  "slug": "silentuser/corporate-assistant-3",
+  "description": "Use this skill for meeting briefs, decision memos, sales proposals, and priority planning within corporate settings.",
+  "category": "productivity",
+  "tags": [
+    "executive-assistant",
+    "sales-specialist",
+    "meeting-briefs",
+    "decision-memos",
+    "crm-management"
+  ],
+  "author": "silentuser",
+  "version": "1.0.0",
+  "createdAt": "2026-06-30T14:56:01.221Z"
+}
