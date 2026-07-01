@@ -1,7 +1,86 @@
 {
   "version": "1",
-  "updatedAt": "2026-06-30T16:59:15.808Z",
+  "updatedAt": "2026-07-01T08:36:38.850Z",
   "skills": [
+    {
+      "name": "silentuser/nextjs-shadcnui-admin-dashboard-designer",
+      "title": "Next.js shadcn/ui Admin Dashboard Designer",
+      "description": "Use this skill when building admin dashboard pages, layouts, or components using Next.js App Router and shadcn/ui, following the design patterns from the next-shadcn-admin-dashboard reference implementation.",
+      "version": "1.0.0",
+      "author": "silentuser",
+      "tags": [
+        "nextjs",
+        "shadcn-ui",
+        "admin-dashboard",
+        "tailwind-css",
+        "ui-design",
+        "react"
+      ],
+      "category": "design",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/nextjs-shadcnui-admin-dashboard-designer/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/nextjs-shadcnui-admin-dashboard-designer/metadata.json",
+      "files": [
+        "SKILL.md",
+        "examples/dashboard-overview-page.md",
+        "metadata.json",
+        "references/component-patterns.md",
+        "references/design-tokens.md",
+        "templates/page-template.tsx"
+      ]
+    },
+    {
+      "name": "silentuser/sql-query-optimizer-1782856770864",
+      "title": "SQL Query Optimizer",
+      "description": "Use this skill when the user provides a slow SQL query, needs an index recommendation, or asks to explain an execution plan in plain language.",
+      "version": "1.0.0",
+      "author": "silentuser",
+      "tags": [
+        "sql",
+        "performance",
+        "indexing",
+        "execution-plans",
+        "query-rewrite"
+      ],
+      "category": "coding",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/sql-query-optimizer-1782856770864/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/sql-query-optimizer-1782856770864/metadata.json",
+      "files": [
+        "SKILL.md",
+        "examples/sample-query-analysis.md",
+        "metadata.json",
+        "references/sql-tuning-guide.md",
+        "templates/query-report-template.md"
+      ]
+    },
+    {
+      "name": "silentuser/shadcn-admin-dashboard-design-reference",
+      "title": "Shadcn Admin Dashboard Design Reference",
+      "description": "Use this skill when designing websites, admin panels, or dashboards that reference the visual language, layout patterns, component structure, and theming of the next-shadcn-admin-dashboard repository.",
+      "version": "1.0.0",
+      "author": "silentuser",
+      "tags": [
+        "admin-dashboard",
+        "shadcn-ui",
+        "nextjs",
+        "tailwind",
+        "ui-design",
+        "dashboard"
+      ],
+      "category": "design",
+      "agents": [],
+      "license": "MIT",
+      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/shadcn-admin-dashboard-design-reference/SKILL.md",
+      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/shadcn-admin-dashboard-design-reference/metadata.json",
+      "files": [
+        "SKILL.md",
+        "design.md",
+        "metadata.json"
+      ]
+    },
     {
       "name": "professor-gpt/code-reviewer",
       "title": "Code Reviewer",
