@@ -1,0 +1,16 @@
+{
+  "name": "SQL Query Optimizer",
+  "slug": "silentuser/sql-query-optimizer-1782856770864",
+  "description": "Use this skill when the user provides a slow SQL query, needs an index recommendation, or asks to explain an execution plan in plain language.",
+  "category": "coding",
+  "tags": [
+    "sql",
+    "performance",
+    "indexing",
+    "execution-plans",
+    "query-rewrite"
+  ],
+  "author": "silentuser",
+  "version": "1.0.0",
+  "createdAt": "2026-07-01T08:35:06.624Z"
+}
