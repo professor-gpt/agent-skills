@@ -39,9 +39,10 @@ for (const slug of slugs) {
   console.log(`\nValidating: ${slug}`)
 
   // 1. Directory exists?
+  // If the directory is missing, the PR is removing this skill (deletion PR).
+  // Deletion PRs don't need content validation — they only remove files.
   if (!fs.existsSync(skillDir) || !fs.statSync(skillDir).isDirectory()) {
-    err(`Directory not found: skills/${slug}/`)
-    totalErrors += skillErrors.length
+    log(`ℹ️  Directory removed — skill is being deleted, skipping validation.`)
     continue
   }
 
