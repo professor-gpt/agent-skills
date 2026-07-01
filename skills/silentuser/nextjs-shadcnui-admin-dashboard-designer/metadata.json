@@ -1,0 +1,17 @@
+{
+  "name": "Next.js shadcn/ui Admin Dashboard Designer",
+  "slug": "silentuser/nextjs-shadcnui-admin-dashboard-designer",
+  "description": "Use this skill when building admin dashboard pages, layouts, or components using Next.js App Router and shadcn/ui, following the design patterns from the next-shadcn-admin-dashboard reference implementation.",
+  "category": "design",
+  "tags": [
+    "nextjs",
+    "shadcn-ui",
+    "admin-dashboard",
+    "tailwind-css",
+    "ui-design",
+    "react"
+  ],
+  "author": "silentuser",
+  "version": "1.0.0",
+  "createdAt": "2026-07-01T08:35:07.665Z"
+}
