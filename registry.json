@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "updatedAt": "2026-07-01T08:36:38.850Z",
+  "updatedAt": "2026-07-01T08:50:09.483Z",
   "skills": [
     {
       "name": "silentuser/nextjs-shadcnui-admin-dashboard-designer",
@@ -28,32 +28,6 @@
         "references/component-patterns.md",
         "references/design-tokens.md",
         "templates/page-template.tsx"
-      ]
-    },
-    {
-      "name": "silentuser/sql-query-optimizer-1782856770864",
-      "title": "SQL Query Optimizer",
-      "description": "Use this skill when the user provides a slow SQL query, needs an index recommendation, or asks to explain an execution plan in plain language.",
-      "version": "1.0.0",
-      "author": "silentuser",
-      "tags": [
-        "sql",
-        "performance",
-        "indexing",
-        "execution-plans",
-        "query-rewrite"
-      ],
-      "category": "coding",
-      "agents": [],
-      "license": "MIT",
-      "skillMdUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/sql-query-optimizer-1782856770864/SKILL.md",
-      "metadataUrl": "https://raw.githubusercontent.com/professor-gpt/agent-skills/main/skills/silentuser/sql-query-optimizer-1782856770864/metadata.json",
-      "files": [
-        "SKILL.md",
-        "examples/sample-query-analysis.md",
-        "metadata.json",
-        "references/sql-tuning-guide.md",
-        "templates/query-report-template.md"
       ]
     },
     {
