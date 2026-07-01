@@ -6,6 +6,15 @@ on:
     paths: ["skills/**"]
   workflow_dispatch:
 
+# When multiple skills are published in quick succession each merge triggers a
+# separate run. Without concurrency control, older runs check out an earlier
+# commit and fail with "non-fast-forward" when they try to push because main
+# has already moved on. cancel-in-progress: true drops stale runs so only the
+# latest (most complete) checkout wins.
+concurrency:
+  group: registry
+  cancel-in-progress: true
+
 jobs:
   generate:
     name: Regenerate registry.json
@@ -18,10 +27,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # PAT from repo owner (professor-gpt) bypasses Ruleset "require PR" rule.
-          # Add REGISTRY_PAT secret: Settings → Secrets → Actions → New repository secret
-          # Value: same PAT used for GITHUB_TOKEN in .env (needs repo + workflow scopes)
           token: ${{ secrets.REGISTRY_PAT }}
+          # fetch-depth: 0 so git pull --rebase can fast-forward to latest main
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -39,7 +47,10 @@ jobs:
           git add registry.json
           if git diff --staged --quiet; then
             echo "registry.json unchanged — nothing to commit."
-          else
-            git commit -m "chore: regenerate registry.json [ci skip]"
-            git push
+            exit 0
           fi
+          git commit -m "chore: regenerate registry.json [ci skip]"
+          # Rebase onto latest main before pushing — handles the case where
+          # another merge landed between our checkout and now.
+          git pull --rebase origin main
+          git push
